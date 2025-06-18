@@ -5,7 +5,7 @@
 ![Pandas](https://img.shields.io/badge/Pandas-2.0+-brightgreen)
 
 ## Objetivo do projeto
-O projeto o objetivo de realizar a exploração da base de dados da RAIS — Ano base 2024 — e reponder as sequintes respostas:
+O projeto se destina a realizar a exploração da base de dados da RAIS — Ano base 2024 — e reponder as sequintes respostas:
 - Evidenciar a distribuição salarial de acordo com a etnia e grau de escolaridade.
 - Verificar diferença salarial de acordo com o gênero.
 - Verificar a taxa de ocupação por faixa etária.
