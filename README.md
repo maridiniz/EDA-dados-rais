@@ -7,16 +7,40 @@
 ---
 
 ## Objetivo do projeto
-O projeto se destina a realizar a análise exploratória da base de dados da RAIS — Ano base 2024 — e tentar resumir algumas informações sobre as distribuições de frequências da faixa média salarial na cidade de São Paulo, se existe diferenciação entre os gêneros quanto ao salário, e a etnia. Também verificar a taxa de ocupação por idade e escolaridade.
+Realizar uma análise exploratória (EDA) da base de dados da RAIS (Ano base 2024) para:
+- Analisar distribuições de frequência da faixa salarial média em São Paulo.
+- Identificar diferenças salariais por gênero e etnia.
+- Investigar a taxa de ocupação por idade e escolaridade.
 
 ---
+
+## Configurações do Ambiente
+
+### Pre-requisitos:
+- Python 3.9+
+- Dependências: `pandas`, `Numpy`, `Matplotlib`, `Seaborn`
+
+### Instalação
+1. Instale as dependências:
+```python
+pip install pandas seaborn matplotlib numpy
+```
+
+2. Clone o repositório:
+```bash
+git@github.com:maridiniz/EDA-dados-rais.git
+```
+
 
 ## Estrutura do Projeto
 ```
 .
 └── 📦 EDA-dados-rais/
-    ├── 📂 dados            # Metadados com a tradução das variáveis.
-    └── 📂 notebook         # Notebook Python com análise e código fonte.
+    ├── 📂 dados/
+    │   └── 📄 dicionario_rais.xls                    # Metadados com a tradução das variáveis.
+    ├── 📂 notebook/
+    │   └── 📄 exploratory_data_analysis_rais.ipybn   # Notebook Python com análise e código fonte.
+    └── README.md                                     # Vião geral do projeto.     
 ```
 
 ---
