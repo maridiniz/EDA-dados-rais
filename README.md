@@ -33,6 +33,7 @@ pip install pandas seaborn matplotlib numpy
 git@github.com:maridiniz/EDA-dados-rais.git
 ```
 
+---
 
 ## Estrutura do Projeto
 ```
@@ -47,4 +48,8 @@ git@github.com:maridiniz/EDA-dados-rais.git
 
 ---
 
-##
+## Fluxo da Análise
+
+---
+
+## Demonstração
