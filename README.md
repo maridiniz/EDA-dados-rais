@@ -4,6 +4,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Pandas](https://img.shields.io/badge/Pandas-2.0+-brightgreen)
 [![Seaborn](https://img.shields.io/badge/Seaborn-0.12.2-blue?logo=seaborn&logoColor=white)](https://seaborn.pydata.org/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org)
 
 ## Objetivo do projeto
 O projeto o objetivo de realizar a exploração da base de dados da RAIS — Ano base 2024 — e reponder as sequintes respostas:
