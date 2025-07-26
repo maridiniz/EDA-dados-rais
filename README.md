@@ -48,7 +48,7 @@ git@github.com:maridiniz/EDA-dados-rais.git
     ├── 📂 dados/
     │   └── 📄 dicionario_rais.xls                        # Metadados com a tradução das variáveis.
     ├── 📂 image/
-    ├── 📂 notebook/
+    ├── 📂 script/
     │   └── 🐍📄 exploratory_data_analysis_rais.ipybn     # código fonte.
     ├── 📄 README.md                                      # Visão geral do projeto.
     └── 📄 License                                        # Licença MIT.    
