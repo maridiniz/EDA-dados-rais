@@ -113,7 +113,5 @@ As taxas de ocupação considerando faixa etária e escolaridade se mostram da s
 - 54,7% da taxa de ocupação são de pessoas com ensino médio completo.
 - menos de 1% é a taxa de ocupação de profissionais com mestrado e doutorado.
 - Profissionais com superior completo, compreendem uma taxa de ocupação de 23,4%.
-- 
-![](/image/taxa_faixa_etaria.png)
 
-![](/image/taxa_escolaridade.png)
+![](/image/ocupacao_idade_escolaridade.png)
