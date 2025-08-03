@@ -47,13 +47,13 @@ git@github.com:maridiniz/EDA-dados-rais.git
 └── 📦 EDA-dados-rais/
     ├── 📂 dados/
     │   ├── 📄 dicionario_rais.xls     # Metadados oficiais.
-    │   └── 📄 dados_processados.csv   # Dados já processados.
     ├── 📂 image/
     ├── 📂 script/
     │   ├── 🐍📄 exploratory_data_analysis_rais.ipybn  # Notebook com o código fonte
     │   └── 📄 data_processing.py    # Módulo com as funções variáveis.
     ├── 📄license
-    └── 📄README.md  # Visão geral do projeto. 
+    └── 📄README.md  # Visão geral do projeto.
+    └── 📄.gitignore 
 
 ```
 
@@ -67,24 +67,23 @@ Os dados da Rais são geralmente bem grandes, e nesse projeto eles são acessado
 
 **Limpeza e pré-processamento**:
 
-O dataset possui todas as variáveis codificadas em valores numéricos, o que é um padrão dos dados da Rais. Foi realizado o mapeamento dos códigos com base nos [metadados oficiais](/dados), e posteriormente foi criado um dicionário com as traduções para inferência, e assim prosseguir com a EDA. Decidi manter as variáveis codificadas junto das variáveis já com valores traduzidos, tudo no mesmo dataset `translated_df_sp`. As colunas com dados traduzidos possuem as suas observações discretizadas, ou seja, em dados agrupados em intervalos/faixas. Foi optado pela transformação do tipo de dado das colunas que apresentavam uma ideia de ordem (Categórica ordinal) para o tipo `Categorical` e assim preservar suas ideias de ordem.
+Foi realizado a filtragem apenas das variáveis de interesse, assim como também o município alvo, que no caso é a cidade de São Paulo. As observações das variáveis da base de dados da Rais são codificadas, então foi necessário traduzir essas informações com base nos [`metadados oficiais`](/dados/dicionario_rais.xls). Foi criado um módulo que contém o dicionário com os valores utilizados na tradução, também contém funções utilizadas no pré-processamento dos dados.
 
-As informações de interesse para este projeto são apenas da cidade de São Paulo, então foi realizada a filtragem por município e também apenas das variáveis de interesse, resultando em uma base de dados com 6.669.537 linhas e 11 variáveis, sendo 6 codificadas — que decidi manter — e 5 traduzidas.
+Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 linhas. Não foi encontrado indícios de dados faltantes e os outliers encontrados se tratam de dados válidos e que não foram removidos. 
 
-A base de dados, após a filtragem das informações de interesse, não possuem dados faltantes e os outliers são dados válidos. Foram aplicadas funções para padronizar as colunas do dataset para garantir dados concisos e íntegros.
+Todas as variáeis de interesse após tradução são do tipo qualitativas, nominais e ordinais. Foi necessário realizar a trasformação das variáveis categóricas ordinais para que fosse preservada a ideia de ordem destes dados.
 
-*Nota*:
-
-O módulo [`data_processing.py`](/scripts/data_processing.py) possui as funções user_defined utilizadas neste projeto e o dicionário utilizado na inferência para traduzir os valores das observações.
+Foram criados dataset menores com informações específicas para facilitar em algumas técnincas de visualização, como foi o caso do gráfico de barras que obtém a taxa de ocupação por gênero (dataset `taxa_ocupacao_genero`). Outra técnica de visualização onde foi criado outro dataset com informações específicas foi o `distribution_sex` que é utilizado para visualizar a distribuição salarial no contexto de gênero.
 
 **Análise exploratória**:
 
-- Técnicas de visualização: 
-     - Gráficos de barras para obter a distribuição de frequência das faixas salariais e avaliar no contexto de gênero, assim como a taxa de ocupação de faixa etária e de gênero.
-     - Boxplot para ampliar a visão de distribuição das faixas médias salariais.
-     - Violino para visualizar a distribução salarial considerando raça/cor.
+- Estatística Descritiva: 
 
-- Grupos de comparação (gênero, etnia, faixa etária e nível de educação)
+Todas as técnicas de estatística descritivas utilizadas foram específicas quando tratamos de dados categóricos, uma vez que não são dados que podemos quantificar com medidas de tendência central como média e de disperção como variância e desvio padrão. No entanto, anda conseguimos utilizar a moda, através das frequências de distribuições com gráficos de barras, ou mediana e intervalo interquartis, nos casos de dados ordinais através dos bloxplots e violinos por exemplo. Algumas das técnicas utlizadas foram:
+
+- Gráficos de barras para avaliar a distribuição salarial no contexto de gênero, assim como as taxas de ocupação por faixa  etária, escolaridade e gênero.
+- Boxplot para ampliar a visão de distribuição salarial.
+- Violino para visualizar a distribução salarial considerando etnia.
 
 ---
 
