@@ -91,15 +91,19 @@ O módulo [`data_processing.py`](/scripts/data_processing.py) possui as funçõe
 ## Insights e Conclusão
 
 Avaliado a distribuição de acordo com cada faixa salarial na cidade de São Paulo, observamos uma distribuição assimétrica positiva, onde os maiores salários se concentram em poucos indivíduos. 28% dos indivíduos estão na faixa de 1,01 a 1,5 salários mínimos (moda), e 2,2% estão na faixa salarial de até 0,5 salários mínimos, enquanto que indivíduos que recebem a partir de 4 salários mínimos são menos que 5%.
+
 ![](/image/distribuicao_faixas_salariais.png)
 
 Agora, avaliando a distribuição salarial, observamos que 25% dos trabalhadores estão abaixo de 1, 01 a 1,50 salários mínimos, enquanto que 25% ganham mais de 4 salários mínimos. A mediana é de 1,51 a 2,00 salários mínimos, o que representa 50% dos nossos salários. A variação dos salários na cidade fica entre 1 a 4 salários mínimos. 
+
 ![](/image/boxplot_faixas_salariais.png)
 
 Considerando a distribuição salarial em um contexto de gênero, percebemos que as mulheres são maioria quando os salários são mais baixos, já os homens predominam os salários mais altos. A taxa de ocupação dos homens também é maior em relação as mulheres, mais de 50% e aproximadamente 48% respectivamente.
+
 ![](/image/ocupacao_distribuicao_combined.png) 
 
 Já com relação a etnia, vemos que os grupos pardos, pretos, indígenas e amarelos possuem 50% dos indivíduos com uma faixa média salarial de 1,51 a 2,00 salários mínimos, equanto brancos possuem 50% dos seus representantes com uma faixa média salarial de 2,01 a 3,00 salários mínimos. No entanto, avaliando a variabilidade das faixas médias salariais entre os grupos, brancos e amarelos são os que possuem m amior variação. Para brancos, os salários variam entre 1,01 a 1,50 e 4,01 a 5,00 salários mínimos, já os amarelos tem uma variação de 1,01 a 1,50 e 5,01 a 7,00 salários mínimos. Os grupos pardos, pretos e indígenas possuem uma menor variação de salário se comparmos aos dois primeiros grupos citados. A variação vai de 1,01 a 1,50 e 2,01 a 3,00 salários mínimos, e entre esses três grupos, os indígenos apresentam uma maior reresentação nas menores faixas médias salariais, evidencializando uma desigualdade ainda maior neste grupo.
+
 ![](/image/violino_raca_cor.png)
 
 As taxas de ocupação considerando faixa etária e escolaridade se mostram da seguinte forma:
@@ -109,5 +113,7 @@ As taxas de ocupação considerando faixa etária e escolaridade se mostram da s
 - 54,7% da taxa de ocupação são de pessoas com ensino médio completo.
 - menos de 1% é a taxa de ocupação de profissionais com mestrado e doutorado.
 - Profissionais com superior completo, compreendem uma taxa de ocupação de 23,4%.
+- 
 ![](/image/taxa_faixa_etaria.png)
+
 ![](/image/taxa_escolaridade.png)
