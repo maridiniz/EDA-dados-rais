@@ -114,3 +114,9 @@ As taxas de ocupação considerando faixa etária e escolaridade se mostram da s
 - Profissionais com superior completo, compreendem uma taxa de ocupação de 23,4%.
 
 ![](/image/ocupacao_idade_escolaridade.png)
+
+---
+
+## License
+
+This project is licensed under the MIT License.
