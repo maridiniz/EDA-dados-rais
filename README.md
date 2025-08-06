@@ -69,9 +69,9 @@ Os dados da Rais são geralmente bem grandes, geralmente algo aproximadamente de
 
 Foi realizada a filtragem apenas das variáveis de interesse, assim como também o município alvo, que no caso é a cidade de São Paulo. As observações das variáveis da base de dados da Rais são codificadas, então foi necessário traduzir essas informações com base nos [`metadados oficiais`](/dados/dicionario_rais.xls). O dicionário com os valores utilizados na tradução está contido no módulo [`data_processing`](/scripts/data_processing.py), que também contém outras funcionalidades utilizadas na extração e pré-processamento dos dados.
 
-Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 observações. Não possui dados faltantes e os outliers encontrados se tratam de informações válidas e que por tanto não foram removidos. 
+Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 observações. Não possui dados faltantes e os outliers encontrados tratam de informações válidas e que por tanto não foram removidos. 
 
-Todas as variáeis de interesse após tradução são do tipo qualitativas, nominais e ordinais. Foi necessário realizar a trasformação das variáveis categóricas ordinais para que fossem preservadas as ideias de ordem destes dados.
+Todas as variáveis de interesse após tradução são do tipo qualitativas, nominais e ordinais. Foi necessário realizar a trasformação das variáveis categóricas ordinais para que fossem preservadas as ideias de ordem destes dados.
 
 Foram criados datasets menores com informações específicas para facilitar em algumas técnincas de visualização, como foi o caso do gráfico de barras que obtém a taxa de ocupação por gênero (dataset `taxa_ocupacao_genero`). Outra técnica de visualização onde foi criado outro dataset com informações específicas foi o `distribution_sex` que é utilizado para visualizar a distribuição salarial no contexto de gênero.
 
