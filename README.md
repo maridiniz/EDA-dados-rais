@@ -63,13 +63,13 @@ git@github.com:maridiniz/EDA-dados-rais.git
 
 **Carregando os dados**:
 
-Os dados da Rais são geralmente bem grandes, e nesse projeto eles são acessados diretamente do servidor [FTP](ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/) do Ministério do Trabalho, através de uma applicação de ETL, que é um dos projetos do meu portfólio, [ingestao-de-dados-ftp](https://github.com/maridiniz/ingestao-de-dados-ftp). Acesse e visualize como é feito processo de extração e carregamento dos arquivos.
+Os dados da Rais são geralmente bem grandes, e nesse projeto eles são acessados diretamente do servidor [FTP](ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/) do Ministério do Trabalho, através de uma applicação de ETL, que está contida no módulo [`data_processing`](/scripts/data_processing.py).
 
 **Limpeza e pré-processamento**:
 
-Foi realizado a filtragem apenas das variáveis de interesse, assim como também o município alvo, que no caso é a cidade de São Paulo. As observações das variáveis da base de dados da Rais são codificadas, então foi necessário traduzir essas informações com base nos [`metadados oficiais`](/dados/dicionario_rais.xls). Foi criado um módulo que contém o dicionário com os valores utilizados na tradução, também contém funções utilizadas no pré-processamento dos dados.
+Foi realizado a filtragem apenas das variáveis de interesse, assim como também o município alvo, que no caso é a cidade de São Paulo. As observações das variáveis da base de dados da Rais são codificadas, então foi necessário traduzir essas informações com base nos [`metadados oficiais`](/dados/dicionario_rais.xls). O dicionário com os valores utilizados na tradução está contido no módulo [`data_processing`](/scripts/data_processing.py), também contém outras funcionalidades utilizadas no pré-processamento dos dados.
 
-Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 linhas. Não foi encontrado indícios de dados faltantes e os outliers encontrados se tratam de dados válidos e que não foram removidos. 
+Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 observações. Não foi encontrado indícios de dados faltantes e os outliers encontrados se tratam de dados válidos e que não foram removidos. 
 
 Todas as variáeis de interesse após tradução são do tipo qualitativas, nominais e ordinais. Foi necessário realizar a trasformação das variáveis categóricas ordinais para que fosse preservada a ideia de ordem destes dados.
 
