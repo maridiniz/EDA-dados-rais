@@ -63,7 +63,7 @@ git@github.com:maridiniz/EDA-dados-rais.git
 
 **Carregando os dados**:
 
-Os dados da Rais são geralmente bem grandes, e nesse projeto eles são acessados diretamente do servidor [FTP](ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/) do Ministério do Trabalho, através de uma applicação de ETL, que está contida no módulo [`data_processing`](/scripts/data_processing.py).
+Os dados da Rais são geralmente bem grandes, e nesse projeto eles são acessados diretamente do servidor [FTP](ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/) do Ministério do Trabalho, através de uma aplicação de ETL, que está contida no módulo [`data_processing`](/scripts/data_processing.py).
 
 **Limpeza e pré-processamento**:
 
