@@ -63,27 +63,27 @@ git@github.com:maridiniz/EDA-dados-rais.git
 
 **Carregando os dados**:
 
-Os dados da Rais são geralmente bem grandes, e nesse projeto eles são acessados diretamente do servidor [FTP](ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/) do Ministério do Trabalho, através de uma aplicação de ETL, que está contida no módulo [`data_processing`](/scripts/data_processing.py).
+Os dados da Rais são geralmente bem grandes, geralmente algo aproximadamente de 10GB ou mais. Nesse projeto esses arquivos são acessados diretamente do servidor [FTP](ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/) do Ministério do Trabalho, através de uma aplicação de ETL que está contida no módulo [`data_processing`](/scripts/data_processing.py).
 
 **Limpeza e pré-processamento**:
 
-Foi realizado a filtragem apenas das variáveis de interesse, assim como também o município alvo, que no caso é a cidade de São Paulo. As observações das variáveis da base de dados da Rais são codificadas, então foi necessário traduzir essas informações com base nos [`metadados oficiais`](/dados/dicionario_rais.xls). O dicionário com os valores utilizados na tradução está contido no módulo [`data_processing`](/scripts/data_processing.py), também contém outras funcionalidades utilizadas no pré-processamento dos dados.
+Foi realizada a filtragem apenas das variáveis de interesse, assim como também o município alvo, que no caso é a cidade de São Paulo. As observações das variáveis da base de dados da Rais são codificadas, então foi necessário traduzir essas informações com base nos [`metadados oficiais`](/dados/dicionario_rais.xls). O dicionário com os valores utilizados na tradução está contido no módulo [`data_processing`](/scripts/data_processing.py), que também contém outras funcionalidades utilizadas na extração e pré-processamento dos dados.
 
-Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 observações. Não foi encontrado indícios de dados faltantes e os outliers encontrados se tratam de dados válidos e que não foram removidos. 
+Após filtragem e tradução dos dados, o dataset contém 11 variáveis — 6 são as variáveis originais codificadas e 5 são as variáveis com as observações traduzidas — e 6.669.537 observações. Não possui dados faltantes e os outliers encontrados se tratam de informações válidas e que por tanto não foram removidos. 
 
-Todas as variáeis de interesse após tradução são do tipo qualitativas, nominais e ordinais. Foi necessário realizar a trasformação das variáveis categóricas ordinais para que fosse preservada a ideia de ordem destes dados.
+Todas as variáeis de interesse após tradução são do tipo qualitativas, nominais e ordinais. Foi necessário realizar a trasformação das variáveis categóricas ordinais para que fossem preservadas as ideias de ordem destes dados.
 
-Foram criados dataset menores com informações específicas para facilitar em algumas técnincas de visualização, como foi o caso do gráfico de barras que obtém a taxa de ocupação por gênero (dataset `taxa_ocupacao_genero`). Outra técnica de visualização onde foi criado outro dataset com informações específicas foi o `distribution_sex` que é utilizado para visualizar a distribuição salarial no contexto de gênero.
+Foram criados datasets menores com informações específicas para facilitar em algumas técnincas de visualização, como foi o caso do gráfico de barras que obtém a taxa de ocupação por gênero (dataset `taxa_ocupacao_genero`). Outra técnica de visualização onde foi criado outro dataset com informações específicas foi o `distribution_sex` que é utilizado para visualizar a distribuição salarial no contexto de gênero.
 
 **Análise exploratória**:
 
 - Estatística Descritiva: 
 
-Todas as técnicas de estatística descritivas utilizadas foram específicas quando tratamos de dados categóricos, uma vez que não são dados que podemos quantificar com medidas de tendência central como média e de disperção como variância e desvio padrão. No entanto, anda conseguimos utilizar a moda, através das frequências de distribuições com gráficos de barras, ou mediana e intervalo interquartis, nos casos de dados ordinais através dos bloxplots e violinos por exemplo. Algumas das técnicas utlizadas foram:
+Todas as técnicas de estatística descritivas utilizadas são estratégias específicas quando tratamos de dados categóricos, uma vez que não são dados que podemos quantificar com medidas de tendência central como média e de disperção como variância e desvio padrão. No entanto, ainda conseguimos utilizar a moda, através das frequências de distribuições com gráficos de barras, ou mediana e intervalo interquartil, nos casos de dados ordinais através dos bloxplots e violinos por exemplo. Algumas das técnicas utlizadas foram:
 
-- Gráficos de barras para avaliar a distribuição salarial no contexto de gênero, assim como as taxas de ocupação por faixa  etária, escolaridade e gênero.
-- Boxplot para ampliar a visão de distribuição salarial.
-- Violino para visualizar a distribução salarial considerando etnia.
+- Gráficos de barras para avaliar a distribuição de frequência salarial no contexto de gênero, assim como as taxas de ocupação por faixa  etária, escolaridade e gênero.
+- Boxplot para avaliar a variabilidade salarial com intervalo interquartil e a porcentagem de trabalhadores com relação a faixa média salarial através dos quartis.
+- Violino para visualizar não apenas a variabilidade salarial entre os grupos étnicos, mas também as desnidades de cada grupo conforme as faixas salariais.
 
 ---
 
@@ -93,15 +93,15 @@ Avaliado a distribuição de acordo com cada faixa salarial na cidade de São Pa
 
 ![](/image/distribuicao_faixas_salariais.png)
 
-Agora, avaliando a distribuição salarial, observamos que 25% dos trabalhadores estão abaixo de 1, 01 a 1,50 salários mínimos, enquanto que 25% ganham mais de 4 salários mínimos. A mediana é de 1,51 a 2,00 salários mínimos, o que representa 50% dos nossos salários. A variação dos salários na cidade fica entre 1 a 4 salários mínimos. Os outliers demonstram que há indivíduos que chegam a faixas médias salariais maiores que 15 salários mínimos.
+Agora, avaliando a distribuição salarial com o boxplot, observamos que 25% dos trabalhadores estão abaixo da faixa média salarial de 1, 01 a 1,50 salários mínimos, enquanto 50% dos trabalhadores estão entre as faixas médias salariais de 1,01 a 1,50 salários mínimos e 3,01 a 4,00 salários mínimos. Apenas 25% dos trabalhadores estão acima das faixas médias salarias de 3,01 a 4,00 salários mínimos. Os pontinhos que são tidos como outliers, na verdade apenas demonstram que há indivíduos que chegam a faixas médias salariais maiores que 10,01 a 15,00 salários mínimos.
 
 ![](/image/boxplot_faixas_salariais.png)
 
-Considerando a distribuição salarial em um contexto de gênero, percebemos que as mulheres são maioria quando os salários são mais baixos, já os homens predominam os salários mais altos. A taxa de ocupação dos homens também é maior em relação as mulheres, mais de 50% e aproximadamente 48% respectivamente.
+Considerando a distribuição salarial em um contexto de gênero, percebemos que as mulheres são maioria quando os salários são mais baixos, já os homens predominam os salários mais altos, conforme conseguimos observar nas primeiras 3 faixas médias salariais. A taxa de ocupação dos homens também é maior em relação as mulheres, 52,7% para homens e 47,3% para mulheres.
 
 ![](/image/ocupacao_distribuicao_combined.png) 
 
-Já com relação a etnia, vemos que os grupos pardos, pretos, indígenas e amarelos possuem 50% dos indivíduos com uma faixa média salarial de 1,51 a 2,00 salários mínimos, equanto brancos possuem 50% dos seus representantes com uma faixa média salarial de 2,01 a 3,00 salários mínimos. No entanto, avaliando a variabilidade das faixas médias salariais entre os grupos, brancos e amarelos são os que possuem maior variação. Para brancos, os salários variam entre 1,01 a 1,50 e 4,01 a 5,00 salários mínimos, já os amarelos tem uma variação de 1,01 a 1,50 e 5,01 a 7,00 salários mínimos. Os grupos pardos, pretos e indígenas possuem uma menor variação de salário se comparmos aos dois primeiros grupos citados. A variação vai de 1,01 a 1,50 e 2,01 a 3,00 salários mínimos, e entre esses três grupos, os indígenos apresentam uma maior representação nas menores faixas médias salariais, evidencializando uma desigualdade ainda maior neste grupo.
+Já com relação a etnia, vemos que os grupos pardos, pretos e indígenas possuem 50% dos indivíduos entre as faixas médias salariais de 1,01 a 1,50 salários mínimos e 2,01 a 3,00 salários mínimos, equanto brancos possuem 50% dos seus representantes entre as faixas médias salariais de 1,01 a 1,50 salários mínimos e 4,01 a 5,00 salários mínimos. Já para o grupos da etnia amarela, os indivíduos estão entre as faixas médias salariais de 1,01 a 1,50 a 5,01 a 7,00 salários mínimos. Isso denota uma maior desigualdade para os grupos pardos, pretos e indígenas, eles possuem uma menor variabilidade salarial em comparação aos brancos e amarelos. Olhando para os grupos pardos, pretos e indígenas, 75% dos seus representantes estão abaixo das faixas médias salariais de 2,01 a 3,00 salários mínimos, apenas 25% entre acimas destas faixas médias salariais. Já o grupo dos brancos possui 75% de sua população abaixo da faixa média salarial de 4,01 a 5,00 salários mínimos, com 25% acima destas faixas médias salariais. Amerelos possuem 75% dos seus indivíduos abaixo das faixas médias salariais de 5,01 a 7,00, com 25% acima destas faixas médias salariais. Observando a densidade entre os grupos, os indígenas possuem uma maior densidade nas menores faixas médias salariais, o que sugere uma maior desiqualdade neste grupo.
 
 ![](/image/violino_raca_cor.png)
 
