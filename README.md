@@ -89,7 +89,7 @@ Todas as técnicas de estatística descritivas utilizadas são estratégias espe
 
 ## Insights e Conclusão
 
-Avaliado a distribuição de acordo com cada faixa salarial na cidade de São Paulo, observamos uma distribuição assimétrica positiva, onde os maiores salários se concentram em poucos indivíduos. 28% dos indivíduos estão na faixa de 1,01 a 1,5 salários mínimos (moda), enquanto que indivíduos entre as faixas médias salariais acima de 4,01 a 5,00 salários mínimos são menos que 5%. Olhando para as faixas médias salariais entre 15,01 a 20,00 salários mínimos acima, não chegam a 2%.
+Avaliado a distribuição de frequência das faixas médias salariais na cidade de São Paulo, observamos uma distribuição assimétrica positiva, onde os maiores salários se concentram em poucos indivíduos. 28% dos indivíduos estão na faixa média salarial de 1,01 a 1,50 salários mínimos (moda), enquanto que indivíduos entre as faixas médias salariais acima de 4,01 a 5,00 salários mínimos são menos que 5%. Olhando para as faixas médias salariais entre 15,01 a 20,00 salários mínimos acima, não chegam a 2%.
 
 ![](/image/distribuicao_faixas_salariais.png)
 
