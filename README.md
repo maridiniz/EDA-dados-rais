@@ -119,4 +119,4 @@ As taxas de ocupação considerando faixa etária e escolaridade se mostram da s
 
 ## License
 
-This project is licensed under the MIT License.
+Este projeto está licenciado sob a MIT License.
