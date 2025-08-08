@@ -86,14 +86,18 @@ def ftp_ingestion(host:str, cwd:str, login="", nrows=None, cols= None) -> pd.Dat
                 # Itera sobre os arquivos descompactados:
                 for file in os.listdir(extracted_dir):
                     full_path = os.path.join(extracted_dir, file)
-                    if file.endswith((".csv", ".txt")):
-                        print("Extração de csv/txt bem sucedida!")
+                    if file.endswith(".csv"):
+                        print("Extração de arquivo csv bem sucedida!")
+                        df = pd.read_csv(full_path, sep=";", encoding="ISO-8859-1", nrows=nrows, usecols=cols)
+                        return df
+                    elif file.endswith(".txt"):
+                        print("Extração de arquivo txt bem sucedida!")
                         df = pd.read_csv(full_path, sep=";", encoding="ISO-8859-1", nrows=nrows, usecols=cols)
                         return df
                     
                     elif file.endswith("json"):
                         df = pd.read_json(full_path)
-                        print("Extração de json bem sucedida.")
+                        print("Extração de json bem sucedida!")
                         return df
                     else:
                         print("Nenhum arquivo compatível.")
